@@ -1,0 +1,16 @@
+.a1{
+    color: burlywood;
+    text-align: center;
+    text-transform: capitalize;
+}
+.a2{
+    color: #0080ff;
+    text-align: left;
+    text-transform: lowercase;
+    text-shadow: 1px;
+}
+.a3{
+    color:rgb(255, 26, 102);
+    text-align: right;
+    text-transform: uppercase;
+}
