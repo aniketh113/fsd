@@ -1,0 +1,11 @@
+h1{
+    color: darkcyan;
+    text-align: center;
+    font-style: oblique;
+    text-transform: uppercase;
+}
+p{
+    color: rgb(255, 0, 255);
+    text-align: left;
+    text-transform: lowercase;
+}

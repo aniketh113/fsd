@@ -1,0 +1,20 @@
+#a1{
+    text-align: center;
+    color: gold;
+    text-transform: uppercase;
+    font-style: inherit;
+}
+#a2{
+    text-align: center;
+    color: lightcoral;
+    font-style: italic;
+}
+.b1{
+    text-align: center;
+    color: orangered;
+    font-style: unset;
+}
+.b2{
+    text-align: center;
+    color: blue;
+}
