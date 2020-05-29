@@ -1,0 +1,20 @@
+ul{
+    list-style-type: none;
+    background-color: black;
+    padding:1px;
+    text-align: center;
+
+}
+ul a{
+    display: inline-block;
+    color: indigo;
+    margin: 10px;
+    background-color: khaki;
+    padding:10px;
+    text-decoration: none;
+    text-align: center;
+}
+a:hover{
+    color: white;
+    background-color: maroon;
+}

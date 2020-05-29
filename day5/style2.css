@@ -1,0 +1,20 @@
+a{
+    color: rebeccapurple;
+    text-align: center;
+}
+a:link{
+    color: red;
+    text-decoration: none;
+    text-align: center;
+    padding:50px;
+    display: inline;
+
+}
+a:hover{
+    color: yellow;
+    background-color: black;
+    text-align: center;
+}
+a:active{
+    color:green;
+}

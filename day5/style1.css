@@ -1,0 +1,37 @@
+.a1{
+    color: gold;
+    border-style: dashed;
+    border-width: 2px;
+    text-align: center;
+    border-color: crimson;
+    margin:20px;
+}
+.a2{
+    border-style: dotted;
+    border-width: 2px;
+    text-align: center;
+    margin:60px;
+    border-color: darkblue;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-right:20px;
+    padding-bottom: 20px;
+}
+.a3{
+    border-style: solid;
+    margin:20px;
+    border-width: 2px;
+    text-align: center;
+    border-color: deeppink;
+}
+.a4{
+    border-style: double;
+    margin:20px;
+    border-top-color:red ;
+    border-bottom-color:greenyellow ;
+    border-left-color:forestgreen;
+    border-right-color: purple;
+    border-width: 5px;
+    text-align: center;
+    padding:50px;
+}

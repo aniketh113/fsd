@@ -1,0 +1,41 @@
+.a1{
+color: orange;
+}
+.a2{
+color:white;
+
+}
+.a3{   
+color:green;
+}
+.b1{
+    width:70%;
+    height: 100%;
+    background-image: url(2.jpg);
+   
+    
+}
+.b2{
+    width:70%;
+    height: 100%;
+    background-image: url(1.jpg);
+}
+
+.b3{
+    width:70%;
+    height: 100%; 
+    background-image: url(ani.jpg);
+}
+.c1{
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.c2{
+    font-size: xx-large;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.c3{
+    font-size: xx-small;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
