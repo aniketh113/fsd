@@ -1,0 +1,43 @@
+.b1{
+    float: left;
+    border-style:solid;
+    border-color: red;
+    margin:3px;   
+}
+.b2{
+    float: right;
+    border-style:solid;
+    border-color: red;
+    margin:3px;
+}
+.b3{
+    text-align: center;
+    border-style: solid;
+    border-width: 4px;
+    padding:2.3%;
+    background-color: gray;
+
+}
+ul{
+    margin-top:0px;
+    border-style: solid;
+    border-color: black;
+    list-style-type: none;
+    background-color:lightblue;
+    padding:1px;
+    text-align: center;
+
+}
+ul a{
+    display: inline-block;
+    color: indigo;
+    margin: 10px;
+    background-color: khaki;
+    padding:10px;
+    text-decoration: none;
+    text-align: center;
+}
+a:hover{
+    color: white;
+    background-color: maroon;
+}
