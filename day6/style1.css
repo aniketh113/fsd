@@ -1,0 +1,14 @@
+select{
+    width: 50%;
+    margin: 20px;
+    padding:20px;
+    font-size:large;
+    background-color: black;
+    color:yellow;
+    border-radius: 10px;
+}
+option{
+    width: 100%;
+    margin:20px;
+    font-size: large;
+}

@@ -1,0 +1,12 @@
+.a1{
+text-shadow: 2px 2px yellow;
+background-color: black;
+text-align: center;
+}
+.a2{
+    border:2px solid yellow;
+    background-color: yellow;
+    text-shadow: 10px 10px red;
+    box-shadow:2px 3px 2px 3px black;
+    text-align: center;
+}

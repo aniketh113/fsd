@@ -1,0 +1,32 @@
+.table,th,td{
+    border: 2px solid;
+    border-collapse: collapse;
+
+}
+input[type=text],input[type=password]{
+    border:2px solid yellow;
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    background-color: black;
+    color:yellow
+}
+label{
+    font-family: monospace;
+    font-variant: small-caps;
+    color: black;
+    font-size: large;
+    font-weight: bolder;
+}
+th,p{
+    font-family: monospace;
+    font-size: x-large;
+
+}
+button{
+    background-color:black;
+    border: 2px solid black;
+    color: yellow;
+
+}
