@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration Form</title>
+        <script>
+            function myfun(){
+
+                var user = document.getElementById("txtusername").value;
+                if(/^[A-Z][a-z0-9]{4,8}$/.test(user)){
+                    window.alert("valid ");
+                }
+                else{
+                    window.alert("invalid");
+                    doucment.getElementById("txtusername").focus();
+                }
+                
+                var pass = document.getElementById("txtpass").value;
+
+                if(/[A-Za-z0-9@$&]{6,20}$/.test(pass)){
+
+                    window.alert("valid password");
+
+                }
+                else{
+                    window.alert("invalid password");
+                    doucment.getElementById("txtpass").focus();
+                }
+
+            }
+        </script>
+    </head>
+    <body>
+        <h2 style="color:cornflowerblue;"align="center">Validation Form</h2>
+        <table align="center">
+            <tr>
+                <td>USERNAME</td>
+                <td>
+        <input type="text" id="txtusername"></td></tr>
+        <tr>
+            <td>PASSWORD</td>
+            <td><input type="password" id="txtpass" /></td>
+        </tr>
+        <tr>
+        <td>FULL NAME</td>
+        <td><input type="text"/></td>    
+        </tr>
+    
+        <tr>
+            <td>DEPARTMENT</td>
+            <td><select style="width: 100%;">
+                <option>CSE</option>
+                <option>ECE</option>
+                <option>MECH</option>
+                <option>EEE</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td>ADDRESS</td>
+            <td>
+            <textarea rows="8" cols="10" style="width: 100%;"></textarea>  
+            </td>
+        </tr>
+
+        <tr>
+            <td align="center" colspan="2">
+        <button type="button" onclick="myfun()">validate</button></td></tr>
+        </table>
+    </body>
+</html>
