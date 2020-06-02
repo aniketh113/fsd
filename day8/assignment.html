@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration Form</title>
+        <script>
+            function myfun(){
+                
+                
+               
+                
+
+                var user = document.getElementById("u").value;
+                if(/^[a-zA-Z0-9]{2,6}$/.test(user)){
+                    window.alert("valid ");
+                }
+                else{
+                    window.alert("invalid");
+                    doucment.getElementById("u").focus();
+                }
+
+
+
+                var num = document.getElementById("m").value;
+                if(/^[a-zA-z0-9._-]{6,18}[@][a-z]{3,15}[.][a-z]{2,6}$/.test(num)){
+                    window.alert("valid email address");
+                }
+                else{
+                    window.alert("invalid email address");
+                    doucment.getElementById("m").focus();
+                }
+
+                
+                var nu = document.getElementById("n").value;
+
+                if(/^[6-9][0-9]{9}$/.test(nu)){
+
+                    window.alert("valid number");
+
+                }
+                else{
+                    window.alert("invalid number");
+                    doucment.getElementById("n").focus();
+                }
+
+                var roll = document.getElementById("p"),value;
+
+                if(/^[2][2][1][7][1][0][3][0-9]{2}[0-9]{3}$/.test(roll)){
+
+                    window.alert("valid roll number");
+
+                }
+                else{
+                    window.alert("invalid roll number");
+                    doucment.getElementById("p").focus();
+                }
+    
+
+            }
+        </script>
+    </head>
+    <body>
+        <h2 style="color:cornflowerblue;"align="center">Validation Form</h2>
+        <table align="center">
+            <tr>
+                <td>USERNAME</td>
+                <td>
+        <input type="text" id="u"></td></tr>
+        <tr>
+            <td>PHONE NO</td>
+            <td>
+        <input type="text" id="n"></td></tr>
+        <tr>
+            <td>EMAIL</td>
+            <td><input type="text" id="m"/></td>
+        </tr>
+        <tr>
+            <td>ROLL NUMBER</td>
+            <td><input type="text" id="p"/></td>
+        </tr>
+        <tr>
+            <td align="center" colspan="2">
+        <button type="button" onclick="myfun()">validate</button></td></tr>
+        </table>
+    </body>
+</html>

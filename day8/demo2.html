@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>mail validation</title>
+        <script>
+            function myfun(){
+                var num = document.getElementById("m").value;
+                var nu = document.getElementById("n").value;
+                if(/^[a-zA-z0-9._-]{6,18}[@][a-z]{3,15}[.][a-z]{2,6}$/.test(num)){
+                    window.alert("valid email address");
+                }
+                else{
+                    window.alert("invalid email address");
+                    doucment.getElementById("m").focus();
+                }
+                
+                if(/^[6-9][0-9]{9}$/.test(nu)){
+                    window.alert("valid number");
+                }
+                else{
+                    window.alert("invalid number");
+                    doucment.getElementById("n").focus();
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h2 style="color:cornflowerblue;"align="center">Validation in JavaScript</h2>
+        <table align="center">
+            <tr>
+                <td>USERNAME</td>
+                <td>
+        <input type="text" id="m"></td></tr>
+        <tr>
+            <td>PHONE NO</td>
+            <td>
+        <input type="text" id="n"></td></tr>
+        <tr>
+            <td align="center" colspan="2">
+        <button type="button" onclick="myfun()">validate</button></td></tr>
+        </table>
+    </body>
+</html>
