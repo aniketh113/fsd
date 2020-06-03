@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            assignment 1
+        </title>
+        <script>
+            function myfun()
+            {
+                var date = document.getElementById("txtdate").value;
+                if(/^(([0-2][0-9])|([3][0-1]))[/](([0][0-9])|([1][0-2]))[/](([1][9][0-9]{2})|([2][0-9]{3}))$/.test(date)){
+                    window.alert("valid date");
+                }
+                else{
+                    window.alert("invalid date");
+                }
+            }
+        </script>
+
+    </head>
+    <body>
+        <lable>DATE OF BIRTH</lable><br><br>
+        <input type="text" id="txtdate"/><br>
+        <button type="button" onclick="myfun()">SUBMIT</button>
+    </body>
+</html>

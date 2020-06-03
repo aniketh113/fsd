@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            assignment 1
+        </title>
+        <script>
+            function myfun()
+            {
+                var pass = document.getElementById("txt").value;
+                if(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$]).{5,12}$/.test(date)){
+                  document.getElementById('lblerror').innerHTML = 'Valid password';
+                }
+                else{
+                    document.getElementById('lblerror').innerHTML = 'Invalid password';
+                }
+            }
+        </script>
+
+    </head>
+    <body>
+        <h1 >VALIDATION OF PASSWORD</h1>
+        <lable>PASSWORD</lable><br><br>
+        <input type="text" id="txt"/><br>
+        <span id="lblerror"></span>
+        <button type="button" onclick="myfun()">SUBMIT</button>
+    </body>
+</html>
