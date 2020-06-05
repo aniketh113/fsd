@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>ROOM BOOKING</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' href='regis.css'>
+<script src="work.js"></script>
+</head>
+
+
+
+<body>
+    <img src="image/hotel1.png" id="img" width="200px" height="200px"/>
+    <form method="post" onsubmit="return validate()">
+    <div class="a">
+    <table border="1px" align="center">
+        <thead>
+         <tr>
+             <th colspan="4" align="center" style="font-size: 50px;">ROOM BOOKING</th>
+         </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><lable>FIRST NAME</lable></td>
+            <td><input type="text" id="txt" placeholder=" enter firstname"/></td>
+            <td><lable>SECOND NAME</lable></td>
+            <td><input type="text" id="txt1" placeholder="enter secondname"/></td>
+        </tr>
+        <tr>
+            <td><lable>EMAILID</lable></td>
+            <td><input type="text" id="txtemail" placeholder="enter email"/></td>
+        </tr>
+        <tr>
+            <td><lable>PHONE NUMBER</lable></td>
+            <td><input type="text"id="number"placeholder="enter number"></td>
+        </tr>
+        <tr>
+            <td><lable>ADDRESS</lable></td>
+            <td><textarea rows="10"cols="20"placeholder="enter address"></textarea></td>
+        </tr>
+        <tr>
+            <td><lable>IN-DATE</lable></td>
+            <td><input type="date"></td>
+            <td><lable>OUT-DATE</lable></td>
+            <td><input type="date"></td>
+        </tr>
+        <tr>
+            <td><lable>NO. OF PERSONS</lable></td>
+            <td><input type="number" id="noofpersons"/></td>
+            <td><lable>NIGHTS</lable></td>
+            <td><input type="number" id="nights"/></td>
+        </tr>
+        <tr>
+            <td><lable>ROOM TYPE</lable></td>
+            <td><select>
+                <option>SINGLE</option>
+                <option>DOUBLE</option>
+                <option>TRIPLE</option>
+                <option>QUAD</option>
+                <option>KING</option>
+                <option>QUEEN</option>
+                <OPTION>SUIT ROOM</OPTION>
+            </select></td>
+            <td><lable>NO. OF ROOMS</lable> </td>
+            <td><input type="number" id="noofrooms" width="100%"/></td>
+        </tr>
+        <tr>
+            <td colspan="4" align="center">
+            <button type="submit">Submit</button><button>Cancel</button></td>
+        </tr>
+    </tbody>
+    </table>
+    </div>
+    </form>
+</body>
+</html>

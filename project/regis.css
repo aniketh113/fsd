@@ -1,0 +1,67 @@
+body{
+    background: linear-gradient(to right,rgb(228, 218, 164) 0%,rgb(25, 5, 48) 100%);
+}
+table{
+margin-top: 5%;
+border-style: solid;
+border-color: transparent;
+}
+td{
+    padding:10px;
+    font-weight:bold ;
+}
+th{
+    margin:10% ;
+}
+.a{
+    border-style: solid;
+    border-color: black;
+    border-radius: 20px;
+ margin-left: 20%;
+ margin-right: 20%;
+ margin-top: 5%;
+}
+button{
+    margin: 10px;
+    padding: 8px;
+
+    border-radius: 10px;
+    border-color: white;
+    width: 50%;
+
+}
+input[type=text] 
+{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border-color: white;
+}
+input[type=number]
+{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border-color: white; 
+}
+select{
+    width:100%;
+    padding: 10px;
+    border-color: white;
+    border-radius: 10px;
+}
+option{
+    width: 100%;
+}
+lable{
+    font-size: large;
+}
+#img{
+    float: left;
+}
