@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Form</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="Style.css">
+</head>
+<body>
+<div class="container">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="card-header">
+				<h3 align="center" style="color: yellow;">Register Here</h3>
+			
+			</div>
+			<div class="card-body">
+				<form>
+					<div class="input-group form-group">
+						<!-- full name-->
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+						</div>
+						<input type="text" class="form-control" placeholder="Full Name">
+						
+					</div>
+
+					<!-- email-->
+					<div class="input-group form-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text"><i class="fas fa-envelope"></i></span>
+					</div>
+					<input type="text" class="form-control" placeholder="Email Address">
+					</div>
+					<!--phone number-->
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-phone"></i></span>
+						</div>
+						<select class="custom-select" style="max-width: 120px;">
+							<option>+91</option>
+							<option>+1</option>
+							<option>+33</option>
+							<option>+99</option>
+						</select>
+						<input type="text" class="form-control" placeholder="Phone Number">
+					</div>
+					<!--occupation-->
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-users"></i></span>
+						</div>
+						<select class="custom-select" style="max-width: 350px;">
+							<option selected>Select occupation</option>
+							<option>Student</option>
+							<option>Teacher</option>
+							<option>Army</option>
+							<option>Police</option>
+						</select>
+					</div>
+					<!--password-->
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+						</div>
+						<input type="password" class="form-control" placeholder=" Enter password">
+					</div>
+					<!--retype password-->
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+						</div>
+						<input type="password" class="form-control" placeholder="Enter password">
+					</div>
+				
+					<div class="row align-items-center remember">
+						<input type="checkbox">Remember Me
+					</div>
+				</div>
+					<div class="form-group">
+                        <input type="submit" value="Register" class="btn login_btn">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
