@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Jquery Introduction</title>
+        <script type="text/javascript" src="bootstrap/js/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#btnin").click(function(){
+                    $("#txt").fadeIn(1000);
+                });
+                $("#btnout").click(function(){
+                    $("#txt").fadeOut(1000);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div>
+        <h1 id="txt">Hi Friends</h1>
+        </div>
+        <div>
+        <button id="btnin" type="button" style="background-color: rgb(255, 81, 0); border-color: rgb(255, 81, 0); padding: 10px; border-radius: 8px;" >Fade In</button>
+    <button id="btnout" type="button" style="background-color: rgb(255, 81, 0); border-color: rgb(255, 81, 0); padding: 10px; border-radius: 8px;" >Fade out</button> 
+            </div>
+</body>
+</html>

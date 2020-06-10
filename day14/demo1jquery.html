@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Jquery Introduction</title>
+        <script type="text/javascript" src="bootstrap/js/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#btn").click(function(){
+                    $("#txt").hide();
+                });
+                $("#btn1").click(function(){
+                    $("#txt").show();
+                });
+                $("#btntoggle").click(function(){
+                    $("#txt").toggle(1000);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h1 id="txt">Hi Friends</h1>
+        <button id="btn" type="button" style="background-color: rgb(255, 81, 0); border-color: rgb(255, 81, 0); padding: 10px; border-radius: 8px;" >Hide</button>
+    <button id="btn1" type="button" style="background-color: rgb(255, 81, 0); border-color: rgb(255, 81, 0); padding: 10px; border-radius: 8px;" >Show</button>
+    <button id="btntoggle" type="button" style="background-color: rgb(255, 81, 0); border-color: rgb(255, 81, 0); padding: 10px; border-radius: 8px;">Toogle</button> 
+    </body>
+</html>
