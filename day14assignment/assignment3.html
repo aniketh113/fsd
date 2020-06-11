@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>assignment3</title>
+
+    <script type="text/javascript" src="bootstrap/js/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $("#button1").click(function(){
+                    $(".max").fadeIn(1000);
+                });
+    });
+    </script>
+    <style>
+        .max{
+    border-radius:5px;
+    display:none;
+}
+.max ul {
+    margin: 0; 
+    padding: 0;
+    width:185px;
+    list-style-type: none;
+    
+}
+.max ul li a {
+    text-decoration: none;
+    color: #fff; 
+    padding: 10.5px 11px;
+    background-color: #3E5F74;
+    display:block;
+    border-bottom:solid 1px #000;
+}
+    </style>
+</head>
+<body>
+    <div class="max">
+        <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        </ul>
+        </div>
+    <button id="button1"> fade in</button>
+</body>
+</html>
