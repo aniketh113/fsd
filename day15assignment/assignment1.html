@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="StyleSheet" href="jquery-ui-1.12.1/jquery-ui.min.css" />
+    <script
+      type="text/javascript"
+      src="bootstrap-4.5.0-dist/js/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="jquery-ui-1.12.1/jquery-ui.min.js"
+    ></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#btn").click(function () {
+          $("div").animate({ right: "200px", height: "450px", width: "450px" });
+        });
+      });
+    </script>
+    <style type="text/css">
+      div {
+        background-color: rgb(200, 255, 0);
+        color: darkred;
+        height: 100px;
+        width: 100px;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <button type="button" id="btn">Animate</button>
+    <div>Animation</div>
+  </body>
+</html>
