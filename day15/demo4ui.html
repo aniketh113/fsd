@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>animate</title>
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="jqueryui/jquery-ui.min.css">
+        <script type="text/javascript" src="bootstrap/js/jquery.min.js"></script>
+        <script type="text/javascript" src="jqueryui/jquery-ui.min.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("#btnclick").click(function(){
+                $("div").animate({right:'350px',height:'450px',width:'450px'});
+            });
+        });
+        
+        </script>
+        <style type="text/css">
+    div{
+        background-color: aquamarine;
+        color: chocolate;
+        height: 250px;
+        width: 250px;
+        position: absolute;
+    }
+        </style>
+    </head>
+    <body>
+        <button type="button" id="btnclick">Animate</button>
+        <div>
+            <h2>
+                Hello
+            </h2>
+        </div>
+    </body>
+</html>

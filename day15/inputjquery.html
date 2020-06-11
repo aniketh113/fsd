@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>get content</title>
+        <script type="text/javascript" src="bootstrap/js/jquery.min.js"></script>
+        <script type="text/javascript" src="jqueryui/jquery-ui.min.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("#btnclick").click(function(){
+                var x = $('#txtusername').val();
+                window.alert(x);
+            });
+        });
+        </script>
+    </head>
+    <body>
+        <input type="text" id="txtusername"/>
+        <button type="button" id="btnclick">submit</button>
+    </body>
+</html>

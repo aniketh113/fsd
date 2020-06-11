@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jquery accordins</title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#div1").slideUp();
+                $("#div2").slideUp();
+                $("#div3").slideUp();
+                $("#id1").click(function(){
+                    $("#div1").slideDown();
+                });
+                $("#id2").click(function(){
+                    $("#div2").slideDown();
+                    $("#div1").slideUp();
+                    $("#div3").slideUp();
+                });
+                $("#id3").click(function(){
+                    $("#div3").slideDown();
+                    $("div1").slideUp();
+                    $("div2").slideUp();
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div>
+            <h2 id="id1">Hi Friends</h2>
+            <div id="div1">
+                <p>how are u all ?</p>
+            </div>
+        </div>
+        <div>
+            <h2 id="id2">My Self</h2>
+            <div id="div2">
+                <p>Y.Aniketh Reddy from GITAM University</p>
+            </div>
+        </div>
+        <div>
+            <h2 id="id3">Studying</h2>
+            <div id="div3">
+                <p>Computer Science and Engineering 3rd year</p>
+            </div>
+        </div>
+    </body>
+</html>
