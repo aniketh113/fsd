@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login Page</title>
+    <link rel="StyleSheet" href="bootstrap/css/bootstrap.min.css">
+    <script type="text/javascript" src="bootstrap/js/jquery.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#btnLogin").click(function(){
+        var val1=$("#us").val();
+        var val2=$("#ps").val();
+        if(val1=='' && val2=='')
+        {
+            $('input[type="text"]').css("border","2px solid red");
+        window.alert('Fill username and Password');
+        }
+    });
+});
+</script>
+<style type="text/css">
+</style>
+
+    </head>
+    <body>
+        <div class="container">
+            <form action="" method="POST">
+                <div class="form-group">
+                    <label for="Username" >Username</label>
+                <input type="text" class="form-control" id="us" placeholder="Enter Username">
+                </div>
+                <div class="form-group">
+                    <label for="Password" >Password</label>
+                <input type="text" class="form-control" id="ps" placeholder="Enter Username">
+                </div>
+                <button type="button" class="btn btn-primary" id="btnLogin">Login</button>
+        </div>
+    </body>
+</html>

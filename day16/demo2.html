@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>addclass</title>
+        <script type="text/javascript" src="bootstrap/js/jquery.min.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $('#btnremoveclass').click(function(){
+                $("#div1").removeClass();
+            });
+        });
+
+        </script>
+        <style>
+            .a1{
+                background-color: aqua;
+                color: darkblue;
+                font-style: italic;
+                font-size: xx-large;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="a1" id="div1">
+            <h1>
+                hello guys very gud mrng
+            </h1>
+
+        </div>
+        <button type="button" id="btnremoveclass">ADDCLASS</button>
+    </body>
+</html>

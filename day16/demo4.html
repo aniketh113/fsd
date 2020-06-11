@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>addclass</title>
+        <script type="text/javascript" src="bootstrap/js/jquery.min.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $('#btnaddcss').click(function(){
+                $("#div1").css("background-color","red");
+            });
+            $('#btnaddcss1').click(function(){
+                $("#div1").css({
+                    'background-color': 'yellow',
+                    'color' : 'balck',
+                    'font-size': 'xx-large'
+                });
+            });
+        });
+
+        </script>
+    </head>
+    <body>
+        <div id="div1">
+            <h1>
+                hello guys very gud mrng
+            </h1>
+
+        </div>
+        <button type="button" id="btnaddcss">ADDproperties</button>
+        <button type="button" id="btnaddcss1">ADDproperties</button>
+    </body>
+
+</html>
