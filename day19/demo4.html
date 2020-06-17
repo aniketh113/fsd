@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>audio</title>
+       
+    </head>
+    <body>
+       <audio id="a">
+            <source src="sample1.mp3" type="audio/mp3"/>
+       </audio>
+       <button id="play">play</button>
+       <button id="pause">stop</button>
+        <script type="text/javascript">
+      var audio = document.getElementById("a");
+      document.getElementById('play').addEventListener('click',function(){
+        audio.play();
+      },false);
+      document.getElementById('stop').addEventListener('click',function(){
+        audio.pause();
+      },false);
+      
+        </script>
+    </body>
+</html>
