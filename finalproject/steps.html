@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<head>
+  <title>Create Appointment | In. Design</title>
+  <link rel="shortcut icon" href="image/icons8.png" />
+  <link rel="StyleSheet" href="steps.css" />
+  <script src="bootstrap/js/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link
+    rel="stylesheet"
+    href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="bootstrap/css/bootstrap.min.css" />
+    <script src="steps.js"></script>
+</head>
+<body>
+    <nav
+    class="navbar navbar-expand-lg navbar-light fixed-top"
+    style="background-color: aliceblue;"
+  >
+  <div class="container"> 
+    <img src="image/icons8.png" height="5%" width="5%">
+    <a class="navbar-brand" href="#" style="border-bottom: 2px solid black;">IN.Design</a>
+    </div>
+    </nav>
+    <h3  style="text-align: center; font-weight: bolder; margin-top: 8%;font-family: 'Times New Roman', Times, serif;">WHAT'S YOUR PLAN ?</h3>
+    <h5  class="tophead" style="text-align: center; font-weight: bold;font-family: 'Times New Roman', Times, serif;">STEP 1 OF 3</h5>
+<div class="card">
+  <div class="card-body">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+       
+          <h4 style="font-weight: bold;">Your Floor Plan</h4>
+          <br />
+          <label for="1BHK" style="margin-right: 60%;">1BHK</label>
+          <input type="radio" class="radio" id="1BHK" name="1BHK" value="1BHK" />
+          <hr />
+
+          <label for="2BHK"style="margin-right: 60%;">2BHK</label>
+          <input type="radio"  class="radio" id="2BHK" name="2BHK" value="2BHK" />
+          <hr />
+
+          <label for="3BHK"style="margin-right: 60%;">3BHK</label>
+          <input type="radio"  class="radio" id="3BHK" name="3BHK" value="3BHK" />
+          <hr />
+
+          <label for="villa"style="margin-right: 60%;">Villa&nbsp;&nbsp;&nbsp;</label>
+          <input type="radio"  class="radio" id="villa" name="villa" value="villa" />
+          <hr />
+          <form id="myForm" name="myForm">
+          <h5 style="font-weight: bolder;">Build-Up Area</h5>
+          <input type="text" placeholder="Total Area"  id="ba"/>&nbsp;sq.ft<br />
+          <br />
+          </form>
+        </div>
+        <div class="col-md-6">
+          <br />
+          <img src="image/createapp/step1.jpg" class="img" width="90%" height="40%" /><br />
+          <h5>Your Ideas.Our Experties</h5>
+          <br />
+          <p>
+            Our 900+ design experts use state-of-the-art 3D design
+            technology, SpaceCraft, to ensure that you get the perfect
+            designs for your home. Wait no more! Start your home interiors
+            journey with us.
+          </p>
+        </div>
+      </div>
+       
+    </div>
+  </div>
+</div>
+<h3
+style="
+  text-align: center;
+  font-weight: bolder;
+  margin-top: 8%;
+  font-family: 'Times New Roman', Times, serif;
+"
+>
+TELL US WHAT YOU NEED
+</h3>
+<h5
+style="
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+"
+>
+STEP 2 OF 3
+</h5>
+<div class="card">
+<div class="card-body">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+           <form id="myForm" name="myForm">
+        <h4 style="text-align: left; font-weight: bolder;">
+          Your Requirements
+        </h4>
+        <br />
+        <label id="kit" for="Kitchen" class="kit"
+          >Kitchen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label
+        >
+        <input
+          type="checkbox"
+          id="Kitchen"
+          name="require"
+          value="Kitchen"
+          checked
+        />
+        <hr />
+        <br />
+
+        <label for="Wardrobe">Wardrobe</label>
+        <div
+          class="value-button"
+          id="decrease"
+          onclick="decreaseValue()"
+          value="Decrease Value"
+        >
+          -
+        </div>
+        <input type="text" id="war" name="require" value="0" style="width: 5%;" />
+        <div
+          class="value-button"
+          id="increase"
+          onclick="increaseValue()"
+          value="Increase Value"
+        >
+          +
+        </div>
+        <hr />
+        <br />
+
+        <label for="Entertainment Unit"
+          >Hall&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label
+        >
+        <div
+          class="value-button"
+          id="decrease"
+          onclick="decreaseValue1()"
+          value="Decrease Value"
+        >
+          -
+        </div>
+        <input type="text" id="war1" name="require" value="0" style="width: 5%;"/>
+        <div
+          class="value-button"
+          id="increase"
+          onclick="increaseValue1()"
+          value="Increase Value"
+        >
+          +
+        </div>
+        <hr />
+        <br />
+
+        <label for="villa"
+          >Study&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label
+        >
+        <div
+          class="value-button"
+          id="decrease"
+          onclick="decreaseValue2()"
+          value="Decrease Value"
+        >
+          -
+        </div>
+        <input type="text" id="war2" name="require" value="0" style="width: 5%;" />
+        <div
+          class="value-button"
+          id="increase"
+          onclick="increaseValue2()"
+          value="Increase Value"
+        >
+          +
+        </div>
+        <hr />
+        <br />
+
+        
+      </div>
+      <div class="col-md-6">
+        <br />
+        <img
+          src="image/createapp/step2.jpg"
+          id="img"
+          width="90%"
+          height="40%"
+        /><br />
+        <h5 style="font-weight: bold;">Modular Kitchen</h5>
+        <br />
+        <p>
+          Whether you are a Masterchef or a two-minute-noodle cook, our
+          kitchen designs are personalised to suit your lifestyle,
+          preferences and floor-plan.
+        </p>
+        <br />
+       
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<h3
+      style="
+        text-align: center;
+        font-weight: bolder;
+        margin-top: 8%;
+        font-family: 'Times New Roman', Times, serif;
+      "
+    >
+      ENTER YOUR DETAILS
+    </h3>
+    <h5
+      style="
+        text-align: center;
+        font-weight: bold;
+        font-family: 'Times New Roman', Times, serif;
+      "
+    >
+      STEP 3 OF 3
+    </h5>
+    <div class="card">
+      <div class="card-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <form id="myForm" name="myForm">
+                Name<span style="color: red;">*</span><br />
+                <input
+                  type="text"
+                  id="fn"
+                  placeholder="First Name"
+                />&nbsp;&nbsp;
+                <input
+                  type="text"
+                  id="ln"
+                  placeholder="Last Name"
+                /><br /><br />
+                Email<span style="color: red;">*</span><br />
+                <input
+                  type="text"
+                  id="em"
+                  placeholder="Enter E-mail here"
+                /><br /><br />
+
+                Phone<span style="color: red;">*</span><br />
+                <input
+                  type="text"
+                  id="phone"
+                  placeholder="Enter Phone Number here"
+                /><br /><br />
+                City<span style="color: red;">*</span><br />
+                <input
+                  type="text"
+                  id="cit"
+                  placeholder="Enter City here"
+                /><br /><br />
+
+                Full Address
+                <span style="color: red;">*</span>
+                <p style="font-size: small;">
+                  (*so that our executive can reach you at location)
+                </p>
+
+                <textarea
+                  name="paragraph_text"
+                  id="area"
+                  cols="40"
+                  rows="5"
+                ></textarea
+                ><br /><br />
+                Pin Code<span style="color: red;">*</span><br />
+                <input
+                  type="text"
+                  id="pincode"
+                  placeholder="Enter Pin Code here"
+                /><br /><br />
+                <button
+                  type="button"
+                  id="bt"
+                  class="btn btn-success"
+                
+                >
+                  Create Your Appoinment</button >&nbsp;&nbsp;
+                <button
+                  type="button"
+                  class="btn btn-danger"
+                  onclick="return res()"
+                >
+                  Reset
+                </button>
+              </form>
+            </div>
+            <div class="col-md-6" id="imagecl">
+              <br />
+              <img
+                src="image/createapp/step3.jpg"
+                class="img"
+                width="100%"
+                height="40%"
+              /><br />
+              <h5>Your Ideas.Our Experties</h5>
+              <br />
+              <p>
+                Your Choice Is Our First And Foremost Priority<br><br>
+                Our mission is to transform your desire of unique, luxury interior designs for your home & office space which is beyond any comparison. Client satisfaction is another factor that drives us to always go the extra mile and give just nothing more than the best.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer-distributed">
+        <div class="footer-left">
+          <h3 class="fothead">
+            <img src="image/icons8.png" height="5%" width="5%" /> IN.Design
+          </h3>
+    
+          <p class="footer-links">
+            <a href="home.html">Home</a>
+            . <a href="aboutus.html">About Us</a>
+            ·
+            <a href="designgallery.html" target="_blank">Design Gallery</a>
+            ·
+            <a href="feedback.html">Feedback</a>
+            ·
+            <a href="recentprojects.html">Recent Projects</a>
+            ·
+            <a href="contactus.html">Contact us</a>
+          </p>
+    
+          <p class="footer-company-name">IN.DESIGN &copy; 2020</p>
+        </div>
+    
+        <div class="footer-center">
+          <h6 class="text-uppercase font-weight-bold" style="color: white;">
+            Contact
+          </h6>
+          <p><i class="fas fa-home mr-3"></i> Hyderabad, HY 10012, INDIA</p>
+          <br />
+          <p><i class="fas fa-envelope mr-3"></i> info@example.com</p>
+          <br />
+          <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+          <br />
+          <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+        </div>
+    
+        <div class="footer-right">
+          <p class="footer-company-about">
+            <span>About the company</span>
+            IN.Design has designed and built more than 5000 homes across the
+            country. DC’s homes have been featured in over 30 design publications
+            across the world. The next one could be yours.
+          </p>
+          <br />
+          <span style="color: white;">Follow Us On:</span>
+          <div class="footer-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </footer>
+</body>

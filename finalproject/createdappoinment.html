@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<head>
+  <title>Appoinment Status | In. Design</title>
+  <script src="bootstrap/js/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <link rel="shortcut icon" href="image/icons8.png" />
+  <link rel="StyleSheet" href="bootstrap/css/bootstrap.min.css" />
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <script src="https://use.fontawesome.com/1c1f65421c.js"></script>
+  <style>
+    #bt:hover {
+      background-color: #000;
+    }
+    body {
+      background-image: url(image/checkapp/green1.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .navbar-light .navbar-brand {
+      color: black;
+      font-size: 25px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      margin-right: 120%;
+    }
+
+    .card {
+      background-color: rgba(0.5, 0.5, 0.5, 0.5);
+      width: 40%;
+      height: 40%;
+      margin-top: 15%;
+      margin-left: 30%;
+      color: white;
+      text-align: center;
+      border-radius: 5%;
+      font-family: "Times New Roman", Times, serif;
+    }
+    input[type="text"] {
+      border: transparent;
+      border-bottom: 1px solid white;
+      background-color: transparent;
+      color: white;
+    }
+    ::placeholder {
+      color: white;
+    }
+    @media (max-width: 880px){
+       .card{
+         height: auto;
+         width: auto;
+         margin-right: 10%;
+         margin-left:10% ;
+       }
+    }
+  </style>
+  <script>
+    function res() {
+      document.getElementById("myForm").reset();
+    }
+     
+      $(document).ready(function () {
+        $("#bt").click(function () {
+          ph = document.getElementById("phone").value;
+      
+          if (ph == "") return alert("Please Enter Phone number.");
+          else{
+      var data={};
+      data.phone=$("#phone").val();
+      $.ajax({
+                        type:"POST",
+                        url:"http://localhost:4014/find/",
+                        data:JSON.stringify(data),
+                        contentType:"application/json; charset=utf-8",
+                        dataType:"json",
+                        success:function(d){
+                          if(d.code==400){
+                            const el = document.createElement('div')
+                            el.innerHTML =  "Didn't create an appointment?<a href='steps.html'> click here</a>"
+                            swal({
+                           title: "Sorry!",
+                           text:"Your Phone Number is not Available as per our Records",
+                           content: el,
+                            icon:"error",
+                        
+                             } );
+                            return false;
+                          }
+                           else if(d.code==200)
+                           {
+                             if(Object.values(d.display)=="incomplete")
+                           {swal(
+                            "Hang on!",
+                            "Your Appoinment is under process and our designer will contact you in few hours.",
+                            "warning"
+                          );
+                           }
+                           else
+                           
+                           {
+                            const el = document.createElement('div')
+                            el.innerHTML =  "click here for<a href='feedback.html'> feedback form </a>"
+                           swal({
+                            title:"Hurray!",
+                            text:"Your Appoinemt is closed as your project is completed.Please share your valuable feedback.",
+                            content: el,
+                            icon:"success"
+                            });
+                           }
+                           }
+                        //  else if(d.code==200){
+                        //  alert(value);
+                        //  }
+                      
+                          
+                        },
+                        
+                        error:function(jqxhr){
+                          const el = document.createElement('div')
+                            el.innerHTML =  "Didn't create an appointment?<a href='steps.html'> click here</a>"
+                            swal({
+                           title: "Sorry!",
+                           text:"Your Phone Number is not Available as per our Records",
+                           content: el,
+                            icon:"error",
+                        
+                             } );
+                        }
+                    })  
+    
+          } 
+    });
+  });
+  </script>
+</head>
+<body>
+  <nav
+    class="navbar navbar-expand-lg navbar-light fixed-top"
+    style="background-color: aliceblue;"
+  >
+    <div class="container">
+      <img src="image/icons8.png" height="5%" width="5%" />
+      <a class="navbar-brand" href="#" style="border-bottom: 2px solid black;"
+        >IN.Design</a
+      >
+    </div>
+  </nav>
+  <div class="card">
+    <div class="card-title">
+      <br />
+      <h3>Check Appoinment Status</h3>
+      <p>*enter phone number</p>
+    </div>
+    <div class="card-body">
+      <form id="myForm" name="myForm">
+        Phone <br />
+        <input
+          type="text"
+          id="phone"
+          placeholder="Enter Phone Number here"
+        /><br /><br />
+       
+        <button
+          type="button"
+          id="bt"
+          class="btn btn-success"
+       
+        >
+          Search</button
+        >&nbsp;&nbsp;
+        <button type="button" class="btn btn-danger" onclick="return res()">
+          Reset
+        </button>
+        <div id="display"></div>
+      </form>
+    </div>
+  </div>
+</body>

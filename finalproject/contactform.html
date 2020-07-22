@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+    rel="stylesheet"
+    href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+    crossorigin="anonymous"
+  />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="bootstrap/js/jquery.min.js"></script>
+    <link rel="StyleSheet" href="bootstrap/css/bootstrap.min.css" />
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <title>CONTACT FORM | In. Design</title>
+    <link rel="shortcut icon" href="image/icons8.png" />
+
+    <!--<script src="contactform.js"></script>-->
+    <script>
+      $(document).ready(function () {
+        $("#bt").click(function () {
+          var result = "";
+          result += validatetxt();
+          result += validateFName();
+          result += validateLName();
+          result += validateEmail();
+          result += matchemail();
+          result += remail();
+          result += validatePhoneno();
+          result += City();
+          result += validatePincode();
+
+          if (result == "") {
+           
+            var data={};
+            data.how= $("#txt").val();
+              data.fname= $("#fn").val();
+              data.lname= $("#ln").val();
+              data.email= $("#em").val();
+              data.cemail= $("#ce").val();
+              data.phone= $("#phone").val();
+              data.city= $("#cit").val();
+              data.pin= $("#pincode").val();
+                    $.ajax({
+                        type:"POST",
+                        url:"http://localhost:4011/contactform/",
+                        data:JSON.stringify(data),
+                        contentType:"application/json; charset=utf-8",
+                        dataType:"json",
+                        success:function(d){
+                          swal(
+              "Thank You",
+              "Your Response has been recorded.Our Team Will Respond in 24 hrs",
+              "success"
+            );
+                        },
+                        error:function(jqxhr){
+                            alert('Error in inserting the data into data base');
+                        }
+                    })  
+            
+            return true;
+          } else {
+            window.alert(result);
+            return false;
+          }
+
+          function validatetxt() {
+            var how = document.getElementById("txt").value;
+            if (how == "") return "PLEASE DON'T LEAVE IT BLANK\n";
+            else return "";
+          }
+          function validateFName() {
+            var regn = /^[a-zA-Z\s]*$/;
+            var name = document.getElementById("fn").value;
+            if (name == "") return "ENTER FIRST NAME\n";
+
+            if (regn.test(name)) return "";
+            else return "INVALID NAME\n";
+          }
+          function validateLName() {
+            var regl = /^[a-zA-Z\s]*$/;
+            var name1 = document.getElementById("ln").value;
+            if (name1 == "") return "ENTER LAST NAME\n";
+            if (regl.test(name1)) return "";
+            else return "INVALID NAME\n";
+          }
+          function validateEmail() {
+            var reg1 = /^[a-zA-z0-9._-]{6,25}[@][a-z]{3,15}[.][a-z]{2,6}$/;
+            var uid = document.getElementById("em").value;
+
+            if (uid == "") return "ENTER EMAIL ID\n";
+
+            if (reg1.test(uid)) return "";
+            else return "ENTER CORRECT EMAIL ID\n";
+          }
+          function remail() {
+            var reg2 = /^[a-zA-z0-9._-]{6,25}[@][a-z]{3,15}[.][a-z]{2,6}$/;
+            var email = document.getElementById("ce").value;
+            if (email == "") return "RE-ENTER EMAIL\n";
+
+            if (reg2.test(email)) return "";
+            else return "ENTER CORRECT EMAIL ID\n";
+          }
+          function matchemail() {
+            var uid = document.getElementById("em").value;
+            var email = document.getElementById("ce").value;
+            if (email != uid) return "EMAIL DOES NOT MATCH\n";
+            else return "";
+          }
+          function validatePhoneno() {
+            var num = /^[6-9][0-9]{9}$/;
+            var psd = document.getElementById("phone").value;
+            if (psd == "") {
+              return "ENTER PHONE NUMBER\n";
+            }
+            if (num.test(psd)) return "";
+            else return "ENTER VALID PHONE NUMBER\n";
+          }
+          function City() {
+            var city = document.getElementById("cit").value;
+            var regc = /^[a-zA-Z\s]*$/;
+            if (city == "") return "PLEASE ENTER CITY NAME\n";
+            if (regc.test(city)) return "";
+            else return "INVALID CITY NAME\n";
+          }
+          function validatePincode() {
+            var reg2 = /^[1-9][0-9]{5}$/;
+            var pin1 = document.getElementById("pincode").value;
+            if (pin1 == "") return "ENTER PINCODE";
+            if (reg2.test(pin1)) return "";
+            else return "ENTER VALID PINCODE\n";
+          }
+        });
+      });
+      function res() {
+        document.getElementById("myForm").reset();
+      }
+    </script>
+
+    <style>
+
+      html body {
+        background-image:url('image/background1.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      #bt {
+        margin-left: 35%;
+      }
+      #nname {
+        width: 82%;
+        color: rgb(0, 0, 0);
+        outline: none;
+        background-color: transparent;
+        border: transparent;
+        border-bottom: 1px solid rgb(0, 0, 0);
+      }
+      input[type="text"] {
+        width: 82%;
+        font-family: "Times New Roman", Times, serif;
+        color: rgb(255, 255, 255);
+        outline: none;
+        background-color: transparent;
+        border: transparent;
+        border-bottom: 1px solid rgb(151, 151, 151);
+      }
+
+      #fn {
+        width: 40%;
+      }
+      #ln {
+        width: 40%;
+      }
+
+      form {
+        text-align: left;
+        font-size: large;
+        margin-left: 15%;
+        font-family: "Times New Roman", Times, serif;
+      }
+      .card {
+        margin: 0 auto;
+        float: none;
+        margin-top: 3%;
+ 
+        background-color: rgba(0, 0, 0, 0.562) !important;
+        width: 50%;
+        height: 90%;
+        color: white;
+        border-radius: 4%;
+        margin-bottom: 5%;
+      }
+      #img1 {
+        margin-left: 34%;
+      }
+      #bt:hover {
+        background-color: black;
+      }
+      ::placeholder {
+        color: white;
+        opacity: 50%;
+      }
+      .footer-distributed {
+  background-color: #292c2f;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+
+  padding: 55px 50px;
+  margin-top: 80px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.footer-distributed .footer-left {
+  width: 40%;
+}
+
+.footer-distributed h3 {
+  color: #ffffff;
+  font: normal 36px;
+  margin: 0;
+}
+
+.footer-distributed h3 span {
+  color: #5383d3;
+}
+.foothead {
+  color: #fff;
+  font-size: 25px;
+  border-bottom: 2px solid black;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-left: 3%;
+  margin-top: 3%;
+}
+.footer-distributed .footer-links {
+  color: #ffffff;
+  margin: 20px 0 12px;
+  padding: 0;
+}
+
+.footer-distributed .footer-links a {
+  display: inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer-distributed .footer-company-name {
+  color: #8f9296;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.footer-distributed .footer-center {
+  width: 35%;
+}
+
+.footer-distributed .footer-center i {
+  background-color: #70757abd;
+  color: #ffffff;
+  font-size: 25px;
+  width: 38px;
+  height: 38px;
+  border-radius: 20%;
+  text-align: center;
+  line-height: 42px;
+  margin: 10px 15px;
+  vertical-align: middle;
+}
+.footer-distributed .footer-center i:hover {
+  background-color: white;
+  color: black;
+}
+
+.footer-distributed .footer-center i.fa-envelope {
+  font-size: 17px;
+  line-height: 38px;
+}
+
+.footer-distributed .footer-center p {
+  display: inline-block;
+  color: #ffffff;
+  vertical-align: middle;
+  margin: 0;
+}
+
+.footer-distributed .footer-center p span {
+  display: block;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.footer-distributed .footer-center p a {
+  color: #5383d3;
+  text-decoration: none;
+}
+
+.footer-distributed .footer-right {
+  width: 20%;
+}
+
+.footer-distributed .footer-company-about {
+  line-height: 20px;
+  color: #92999f;
+  font-size: 13px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.footer-distributed .footer-company-about span {
+  display: block;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons {
+  margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  background-color: #70757abd;
+  border-radius: 20%;
+
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+
+  margin-right: 3px;
+  margin-bottom: 5px;
+}
+.footer-distributed .footer-icons a:hover {
+  background-color: white;
+  color: black;
+}
+
+@media (max-width: 880px) {
+  .footer-distributed {
+    font: bold 14px sans-serif;
+  }
+
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-center,
+  .footer-distributed .footer-right {
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .footer-distributed .footer-center i {
+    margin-left: 0%;
+  }
+}
+    </style>
+  </head>
+  <body>
+    <img src="image/icons8.png" width="10%" height="10%" id="img1" />
+    <img src="image/logo.jpeg" width="15%" height="15%" />
+    
+    <div class="card">
+      <div class="card-body">
+        <div class="container">
+          <form id="myForm">
+            How can we help you ?<span style="color: red;">*</span><br />
+            <input type="text" id="txt" /><br /><br />
+            Name<span style="color: red;">*</span><br />
+            <input type="text" id="fn" placeholder="First Name" />&nbsp;&nbsp;
+            <input type="text" id="ln" placeholder="Last Name" /><br /><br />
+            Email<span style="color: red;">*</span><br />
+            <input type="text" id="em" placeholder="Enter Email" /><br /><br />
+            Confirm Email<span style="color: red;">*</span><br />
+            <input type="text" id="ce" placeholder="Confirm Mail" /><br /><br />
+            Phone<span style="color: red;">*</span><br />
+            <input
+              type="text"
+              id="phone"
+              placeholder="Enter Phone Number "
+            /><br /><br />
+            City<span style="color: red;">*</span><br />
+            <input type="text" id="cit" placeholder="Enter City " /><br /><br />
+
+            Pin Code<span style="color: red;">*</span><br />
+            <input
+              type="text"
+              id="pincode"
+              placeholder="Enter Pin "
+            /><br /><br />
+            <button type="button" id="bt" class="btn btn-success" style="float: left; margin-left: 0%;">
+              Submit</button
+            >
+            <button type="button" class="btn btn-danger" style=" margin-left: 45%;" onclick="return res()">
+              Reset
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div id="result"></div> 
+
+    <footer class="footer-distributed">
+      <div class="footer-left">
+        <h3 class="fothead">
+          <img src="image/icons8.png" height="5%" width="5%" /> IN.Design
+        </h3>
+  
+        <p class="footer-links">
+          <a href="home.html">Home</a>
+          . <a href="aboutus.html">About Us</a>
+          ·
+          <a href="designgallery.html" target="_blank">Design Gallery</a>
+          ·
+          <a href="feedback.html">Feedback</a>
+          ·
+          <a href="recentprojects.html">Recent Projects</a>
+          ·
+          <a href="contactus.html">Contact us</a>
+        </p>
+  
+        <p class="footer-company-name">IN.DESIGN &copy; 2020</p>
+      </div>
+  
+      <div class="footer-center">
+        <h6 class="text-uppercase font-weight-bold" style="color: white;">
+          Contact
+        </h6>
+        <p><i class="fas fa-home mr-3"></i>Hyderabad, HY 10012, INDIA</p>
+        <br />
+        <p><i class="fas fa-envelope mr-3"></i> info@example.com</p>
+        <br />
+        <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+        <br />
+        <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+      </div>
+  
+      <div class="footer-right">
+        <p class="footer-company-about">
+          <span>About the company</span>
+          IN.Design has designed and built more than 5000 homes across the
+          country. DC’s homes have been featured in over 30 design publications
+          across the world. The next one could be yours.
+        </p>
+        <br />
+        <span style="color: white;">Follow Us On:</span>
+        <div class="footer-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

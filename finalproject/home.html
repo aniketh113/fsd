@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<head>
+  <title>HOME | In. Design</title>
+  <link rel="shortcut icon" href="image/icons8.png" />
+  <link rel="StyleSheet" href="home.css" />
+  <script src="bootstrap/js/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link
+    rel="stylesheet"
+    href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="bootstrap/css/bootstrap.min.css" />
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+   
+  <script
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"
+  ></script>
+    
+ <script>
+    $(document).ready(function () {
+        $("#bt").click(function () {
+     var result = "";
+  result += validateName();
+  result += validateEmail();
+  result += validatePhoneno();
+  result += validatePincode();
+
+  if (result == "") {
+   
+    var data={};
+    data.name= $("#un").val();
+              data.email= $("#em").val();
+              data.phone= $("#pn").val();
+             data.pin= $("#pin1").val();
+                    $.ajax({
+                        type:"POST",
+                        url:"http://localhost:4012/home/",
+                        data:JSON.stringify(data),
+                        contentType:"application/json; charset=utf-8",
+                        dataType:"json",
+                        success:function(d){
+                          swal(
+              "Thank You",
+              "Your Response has been recorded.Our Team Will Respond in 24 hrs",
+              "success"
+            );
+                        },
+                        error:function(jqxhr){
+                            alert('Error in inserting the data into data base');
+                        }
+                    })  
+    
+    return true;
+  } else {
+    window.alert(result);
+    return false;
+  }
+
+
+function validateName() {
+  var regn = /^[a-zA-Z\s]*$/;
+  var name = document.getElementById("un").value;
+  if (name == "") return "enter name\n";
+  if (regn.test(name)) return "";
+  else return "enter correct name \n";
+}
+function validateEmail() {
+  var reg1 = /^[a-zA-z0-9._-]{6,25}[@][a-z]{3,15}[.][a-z]{2,6}$/;
+  var uid = document.getElementById("em").value;
+  if (uid == "") return "enter email id\n";
+
+  if (reg1.test(uid)) return "";
+  else return "enter correct email id\n";
+}
+function validatePhoneno() {
+  var num = /^[6-9][0-9]{9}$/;
+  var psd = document.getElementById("pn").value;
+  if (psd == "") {
+    return "enter phone number\n";
+  }
+  if (num.test(psd)) return "";
+  else return "return valid phone number\n";
+}
+
+function validatePincode() {
+  var reg2 = /^[1-9][0-9]{5}$/;
+  var pin = document.getElementById("pin1").value;
+  if (pin == "") return "enter pincode";
+  if (reg2.test(pin)) return "";
+  else return "enter valid pincode\n";
+}
+        });
+      });
+
+ </script>
+</head>
+
+<body>
+ 
+  
+  <div class="bg-img">
+    <nav
+      class="navbar navbar-expand-lg navbar-light fixed-top"
+      style="background-color: aliceblue;"
+    >
+      <div class="container">
+        <img src="image/icons8.png" height="5%" width="5%">
+        <a class="navbar-brand" href="#" style="border-bottom: 2px solid black;">IN.Design</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link active" href="home.html" target="_self">Home</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="aboutus.html"  target="_self">About Us</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="designgallery.html"  target="_blank">Design Gallery</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="feedback.html"  target="_self">Feedback</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="recentprojects.html"  target="_self">Recent Projects</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="contactus.html"  target="_self">Contact us</a>
+            </li>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            <li class="nav-item active">
+              <a href="checkestimate.html" target="_blank"><button type="button" class="btn btn-success">
+              Create/Check Your Appointment
+              </button></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="header1">
+            <h1 id="heading">Interior Designs</h1>
+            <h5 id="matter">
+              Find design ideas from our design gallery or book a meeting with a
+              dedicated design expert
+            </h5>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="card" id="centered">
+            <div class="card-body">
+              <h3>Meet Our Designers Online</h3>
+              <br />
+              <input type="text" id="un" placeholder="Enter Name" /><br />
+              <span id="s1"></span><br>
+              <input type="text" id="em" placeholder="Enter Email" /><br />
+              <span id="s2"></span><br>
+              <input type="text" id="pn" placeholder="Enter Phone Number" /><br /><br>
+               
+              <input type="text" id="pin1" placeholder="Enter Pincode" /><br /><br />
+
+              <button type="button" class="btn btn-success" id="bt" >
+                Submit</button
+              ><br />
+              <p>
+                By submitting this form, you agree to the
+                <a href="#">privacy policy</a> and
+                <a href="#">terms of use</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
+ 
+  <div class="container" id="cor">
+    <div class="row">
+      <div class="col-md-8">
+        <div
+          id="carouselExampleIndicators"
+          class="carousel slide"
+          data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li
+              data-target="#carouselExampleIndicators"
+              data-slide-to="0"
+              class="active"
+            ></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="d-block w-100" src="image/homepage/corousel1/kitchen1.jpg" alt="First slide" />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Modular Kitchens</h5>
+                <p>
+                  <a href="#"
+                    >Click here&nbsp;<i
+                      class="fa fa-arrow-right"
+                      aria-hidden="true"
+                    ></i
+                  ></a>
+                </p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="image/homepage/corousel1/bed1.jpg" alt="Second slide" />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Bedrooms</h5>
+                <p>
+                  <a href="#"
+                    >Click here&nbsp;<i
+                      class="fa fa-arrow-right"
+                      aria-hidden="true"
+                    ></i
+                  ></a>
+                </p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="image/homepage/corousel1/home4.jpg" alt="Third slide" />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Other Interiors</h5>
+                <p>
+                  <a href="#"
+                    >Click here&nbsp;<i
+                      class="fa fa-arrow-right"
+                      aria-hidden="true"
+                    ></i
+                  ></a>
+                </p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="image/homepage/corousel1/image4.jpg" alt="Fourth slide" />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Artificial Plants</h5>
+                <p>
+                  <a href="#"
+                    >Click here&nbsp;<i
+                      class="fa fa-arrow-right"
+                      aria-hidden="true"
+                    ></i
+                  ></a>
+                </p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="image/homepage/corousel1/image5.jpg" alt="fifth slide" />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Magnificent Designs</h5>
+                <p>
+                  <a href="#"
+                    >Click here&nbsp;<i
+                      class="fa fa-arrow-right"
+                      aria-hidden="true"
+                    ></i
+                  ></a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <a
+            class="carousel-control-prev"
+            href="#carouselExampleIndicators"
+            role="button"
+            data-slide="prev"
+            id="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a
+            class="carousel-control-next"
+            href="#carouselExampleIndicators"
+            role="button"
+            data-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4" id="p1">
+        <br />
+        <p>
+          Our interior design experts work with you to create the space that you
+          have been dreaming about. We create home interior designs that are
+          unique to you and your preferences.<br />
+
+          <a href="aboutus.html">Read More</a>
+        </p>
+
+        <p>
+          Live the way you deserve with beautiful living room spaces. Check out
+          our complete range of home interior designs and be inspired!<br />
+
+          <a href="aboutus.html">Read More</a>
+        </p>
+        <p>
+          Find design ideas from our design gallery.<br />
+          <a href="designgallery.html">Click here</a>
+        </p>
+        <p>
+          Book a meeting with a dedicated design expert.<br />
+          <a href="step1.html">Click here</a>
+        </p>
+      </div>
+    </div>
+  </div>
+   <div class="container-fluid" id="one">
+    <div>
+      <br><br><h2><span>
+        Five Steps For Easy Home Interiors.</span></h2>
+    </div><br><br>
+    <div class="row">
+     <div class="col-md-2">
+
+     </div>
+       <div class="col-md-4">
+        <img src="image/homepage/fivesteps/flowergirl.jpg" width="100%" height="95%"> 
+      </div><br>
+    <div class="col-md-3">
+         
+        
+               <img src="image/homepage/fivesteps/innovation.png " width="20%" height="10%">&nbsp;1.Concept <br><br><hr>
+             
+               <img src="image/homepage/fivesteps/study.png"width="20%" height="10%">&nbsp;&nbsp;&nbsp;2.Plan <br><br><hr>
+               
+           
+              <img src="image/homepage/fivesteps/content.png"width="20%" height="10%">&nbsp;&nbsp;&nbsp;3.Design  <br><br><hr>
+              
+            
+              <img src="image/homepage/fivesteps/construction.png"width="20%" height="10%">&nbsp;&nbsp;&nbsp;4.Build <br><br><hr>
+               
+            
+               <img src="image/homepage/fivesteps/speed.png"width="20%" height="10%">&nbsp;&nbsp;&nbsp;5.Launch <br><br><hr>
+              
+            </div>
+      
+     <div class="col-md-3">
+
+     </div>
+    </div>
+   </div>
+  <!--WHO WE ARE STARTS HERE-->
+<div class="container-fluid" id="two">
+  <div>
+    <h2><span>Why IN.Design?</span></h2>
+  </div><br>
+  <div class="row" id="bommal">
+ <div class="col-xs-12 col-sm-6 col-md-3">
+      <img src="image/homepage/why/handmade.jpeg" width="25%" height="60%"><br><p> 5000+ Happy <BR> Customers.</p>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <img src="image/homepage/why/5yw.jpeg" width="25%" height="60%"><br><p>  5 years of Material<BR> Warrany.</p>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <img src="image/homepage/why/appoinment.jpeg" width="25%" height="60%"><br><p >30 days or we<BR> Pay You Rent.</p>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <img src="image/homepage/why/interview.png" width="25%" height="60%"><br><p> 900+ <BR> Experts</p>
+    </div>
+  </div>
+</div><br> <br>
+  
+   
+  </div>
+  <section id="team" class="pb-5">
+    <div class="container">
+      <h5 class="section-title h1">OUR TEAM</h5><br>
+      <div class="row">
+
+
+
+        <!-- Team member  1-->
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <div class="image-flip">
+            <div class="mainflip flip-0">
+              <div class="frontside">
+                <div class="card">
+                  <div class="card-body text-center">
+                    <p>
+                      <img
+                        class="img-fluid"
+                        src="image/homepage/29.png"
+                        alt="card image"
+                      />
+                    </p>
+                    <h4 class="card-title">SHEFALY</h4>
+                    <p class="card-text">
+                      
+                    </p>
+                   
+                  </div>
+                </div>
+              </div>
+              <div class="backside">
+                <div class="card">
+                  <div class="card-body text-center mt-4">
+                    <h4 class="card-title">SHEFALY KASAM</h4>
+                    <p class="card-text">
+                      Working on front and validations of subpages
+                    </p>
+                    <ul class="list-inline">
+                      <li class="list-inline-item">
+                        <a
+                          class="social-icon text-xs-center"
+                          target="_blank"
+                          href="#"
+                        >
+                          <i class="fab fa-facebook"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a
+                          class="social-icon text-xs-center"
+                          target="_blank"
+                          href="#"
+                        >
+                          <i class="fab fa-twitter"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a
+                          class="social-icon text-xs-center"
+                          target="_blank"
+                          href="#"
+                        >
+                          <i class="fab fa-skype"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a
+                          class="social-icon text-xs-center"
+                          target="_blank"
+                          href="#"
+                        >
+                          <i class="fab fa-google"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ./Team member 1 end here -->
+
+
+
+        <!-- Team member 2 start -->
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <div
+            class="image-flip"
+            ontouchstart="this.classList.toggle('hover');"
+          >
+            <div class="mainflip">
+              <div class="frontside">
+                <div class="card">
+                  <div class="card-body text-center">
+                    <p>
+                      <img
+                        class="img-fluid"
+                        src="image/homepage/29.png"
+                        alt="card image"
+                      />
+                    </p>
+                    <h4 class="card-title">VISHWA</h4>
+                    <p class="card-text">
+                      
+                    </p>
+                  
+                  </div>
+                </div>
+              </div>
+              <div class="backside">
+                <div class="card">
+                  <div class="card-body text-center mt-4">
+                    <h4 class="card-title">VISHWANATH</h4>
+                    <p class="card-text">
+                      Working on front end and back end.
+                    </p>
+                    <ul class="list-inline">
+                      <li class="list-inline-item">
+                        <a
+                          class="social-icon text-xs-center"
+                          target="_blank"
+                          href="#"
+                        >
+                          <i class="fab fa-facebook"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a
+                          class="social-icon text-xs-center"
+                          target="_blank"
+                          href="#"
+                        >
+                          <i class="fab fa-twitter"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a
+                          class="social-icon text-xs-center"
+                          target="_blank"
+                          href="#"
+                        >
+                          <i class="fab fa-skype"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a
+                          class="social-icon text-xs-center"
+                          target="_blank"
+                          href="#"
+                        >
+                          <i class="fab fa-google"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ./Team member 2 end here-->
+
+
+
+        <!-- Team member 3 start here -->
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <div
+            class="image-flip"
+            ontouchstart="this.classList.toggle('hover');"
+          >
+            <div class="mainflip">
+              <div class="frontside">
+                <div class="card">
+                  <div class="card-body text-center">
+                    <p>
+                      <img
+                        class="img-fluid"
+                        src="image/homepage/29.png"
+                        alt="card image"
+                      />
+                    </p>
+                    <h4 class="card-title">ANI</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="backside">
+                <div class="card">
+                  <div class="card-body text-center mt-4">
+                    <h4 class="card-title">ANIKETH REDDY</h4>
+                    <p class="card-text">
+                      Working on font part operations and back end.
+                    </p>
+                    <ul class="list-inline">
+                      <li class="list-inline-item">
+                        <a class="social-icon text-xs-center" target="_blank">
+                          <i class="fab fa-facebook"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a class="social-icon text-xs-center" target="_blank">
+                          <i class="fab fa-twitter"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a class="social-icon text-xs-center" target="_blank">
+                          <i class="fab fa-skype"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a class="social-icon text-xs-center" target="_blank">
+                          <i class="fab fa-google"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ./Team member 3 end here-->
+         
+          <!-- Team member 4 start here -->
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <div
+              class="image-flip"
+              ontouchstart="this.classList.toggle('hover');"
+            >
+              <div class="mainflip">
+                <div class="frontside">
+                  <div class="card">
+                    <div class="card-body text-center">
+                      <p>
+                        <img
+                          class="img-fluid"
+                          src="image/homepage/29.png"
+                          alt="card image"
+                        />
+                      </p>
+                      <h4 class="card-title">POOJITHA</h4>
+                      <p class="card-text">
+                       
+                      </p>
+                     
+                    </div>
+                  </div>
+                </div>
+                <div class="backside">
+                  <div class="card">
+                    <div class="card-body text-center mt-4">
+                      <h4 class="card-title">POOJITHA</h4>
+                      <p class="card-text">
+                        working on front end and validation
+                      </p>
+                      <ul class="list-inline">
+                        <li class="list-inline-item">
+                          <a class="social-icon text-xs-center" target="_blank">
+                            <i class="fab fa-facebook"></i>
+                          </a>
+                        </li>
+                        <li class="list-inline-item">
+                          <a class="social-icon text-xs-center" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                          </a>
+                        </li>
+                        <li class="list-inline-item">
+                          <a class="social-icon text-xs-center" target="_blank">
+                            <i class="fab fa-skype"></i>
+                          </a>
+                        </li>
+                        <li class="list-inline-item">
+                          <a class="social-icon text-xs-center" target="_blank">
+                            <i class="fab fa-google"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ./Team member 4 end here-->
+      </div>
+    </div>
+  </section><br><br>
+ <div class="container-fluid" >
+   <h1 style="text-align: center; text-transform: capitalize; font-family: 'Times New Roman', Times, serif;">A Moments of Best Creation.</h1>
+   <div class="row" id="vd">
+     
+     <div class="col-md-6">
+      <video  width="500" height="500"    controls="false" autoplay="autoplay" muted="true"  contenteditable="true">
+        <source src="Video/Video1.mp4" type="video/mp4">
+      
+        Your browser does not support the video tag.
+      </video>
+      
+     </div>
+     <div class="col-md-6"> 
+      <video  width="500" height="500" controls="false" autoplay="autoplay" muted="true"  contenteditable="true">
+        <source src="Video/second.mp4" type="video/mp4">
+      
+        Your browser does not support the video tag.
+      </video>
+     </div>
+   </div>
+ </div><hr><br><br>
+<div class="container-fluid" id="belowi">
+  <img src="image/homepage/book3.jpg" class="img-fluid" alt="Responsive image">
+  <a href="checkestimate.html" target="_self"><button type="button" class="btn btn-success" id="below-button">Create/Check Appointment&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></button></a>
+
+</div>
+</div>
+  
+
+ 
+
+  <!--FOOTER START HERE-->
+  <footer class="footer-distributed">
+    <div class="footer-left">
+      <h3 class="fothead"> <img src="image/icons8.png" height="5%" width="5%"> IN.Design</h3>
+
+      <p class="footer-links">
+        <a href="home.html">Home</a>
+        . <a href="aboutus.html">About Us</a>
+        ·
+        <a href="designgallery.html" target="_blank">Design Gallery</a>
+        ·
+        <a href="feedback.html">Feedback</a>
+        ·
+        <a href="recentprojects.html">Recent Projects</a>
+        ·
+        <a href="contactus.html">Contact us</a>
+      </p>
+
+      <p class="footer-company-name">IN.DESIGN &copy; 2020</p>
+    </div>
+
+    <div class="footer-center">
+      <h6 class="text-uppercase font-weight-bold" style="color: white;">
+        Contact
+      </h6>
+      <p><i class="fas fa-home mr-3"></i> Hyderabad, HY 10012, INDIA</p>
+      <br />
+      <p><i class="fas fa-envelope mr-3"></i> info@example.com</p>
+      <br />
+      <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+      <br />
+      <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+    </div>
+
+    <div class="footer-right">
+      <p class="footer-company-about">
+        <span>About the company</span>
+        IN.Design has designed and built more than 5000 homes across the
+        country. DC’s homes have been featured in over 30 design publications
+        across the world. The next one could be yours.
+      </p><br>
+      <span style="color: white;">Follow Us On:</span>
+      <div class="footer-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+   
+  </footer>
+   
+</body>
