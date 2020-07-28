@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Assignment Solution for Module 2</title>
+<style>
+
+* {
+  box-sizing: border-box;
+}
+h1 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+
+
+
+.row {
+  width: 100%;
+  margin-left: 70px;
+  margin-top: 100px;
+}
+
+/* Large devices only */
+@media (min-width: 1200px) {
+  .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
+    float: left;
+    border:2px solid black;
+  }
+  #c1{
+      width:420px;
+     
+  }
+  .col-lg-1 {
+    width: 8.33%;
+  }
+  .col-lg-2 {
+    width: 16.66%;
+  }
+  .col-lg-3 {
+    width: 25%;
+  }
+  .col-lg-4 {
+    width: 33.33%;
+  }
+  .col-lg-5 {
+    width: 41.66%;
+  }
+  .col-lg-6 {
+    width: 50%;
+  }
+  .col-lg-7 {
+    width: 58.33%;
+  }
+  .col-lg-8 {
+    width: 66.66%;
+  }
+  .col-lg-9 {
+    width: 74.99%;
+  }
+  .col-lg-10 {
+    width: 83.33%;
+  }
+  .col-lg-11 {
+    width: 91.66%;
+  }
+  .col-lg-12 {
+    width: 100%;
+  }
+}
+
+/* Medium devices only */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+    float: left;
+    border:2px solid black;
+
+  }
+  #c1{
+      margin-top: 10px;
+      width:75%;
+      height: 150px;
+  }
+  .col-md-1 {
+    width: 8.33%;
+  }
+  .col-md-2 {
+    width: 16.66%;
+  }
+  .col-md-3 {
+    width: 25%;
+  }
+  .col-md-4 {
+    width: 33.33%;
+  }
+  .col-md-5 {
+    width: 41.66%;
+  }
+  .col-md-6 {
+    width: 50%;
+  }
+  .col-md-7 {
+    width: 58.33%;
+  }
+  .col-md-8 {
+    width: 66.66%;
+  }
+  .col-md-9 {
+    width: 74.99%;
+  }
+  .col-md-10 {
+    width: 83.33%;
+  }
+  .col-md-11 {
+    width: 91.66%;
+  }
+  .col-md-12 {
+    width: 100%;
+  }
+}
+/*small devices only*/
+@media (min-width: 50px) and (max-width: 991px) {
+  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+    float: left;
+    border:2px solid black;
+
+  }
+  #a1{
+      margin-top: 10px;
+    
+  }
+  #b1{
+      margin-top: 10px;
+     
+  }
+  #c1{
+      margin-top: 10px;
+    
+      
+      width:420px;
+      height: 150px;
+  }
+  
+  .col-sm-1 {
+    width: 8.33%;
+  }
+  .col-sm-2 {
+    width: 16.66%;
+  }
+  .col-sm-3 {
+    width: 25%;
+  }
+  .col-sm-4 {
+    width: 33.33%;
+  }
+  .col-sm-5 {
+    width: 41.66%;
+  }
+  .col-sm-6 {
+    width: 50%;
+  }
+  .col-sm-7 {
+    width: 58.33%;
+  }
+  .col-sm-8 {
+    width: 66.66%;
+  }
+  .col-sm-9 {
+    width: 74.99%;
+  }
+  .col-sm-10 {
+    width: 83.33%;
+  }
+  .col-sm-11 {
+    width: 91.66%;
+  }
+  .col-sm-12 {
+    width: 100%;
+  }
+}
+#a{
+    background-color: rgb(197, 135, 146);
+    width: 90px;
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+    padding:4px;
+  
+    margin:0px;
+    float:right;
+    text-align: center;
+
+}
+
+#b{
+    background-color: rgb(255, 0, 47);
+    width: 90px;
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+    padding:4px; 
+    margin: 0px;   text-align: center;
+    float:right;
+}
+#c{
+    background-color: rgb(252, 212, 104);
+    width: 90px;
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+    padding:4px;   text-align: center;
+    margin: 0px;
+    float:right; 
+}
+#a1{
+    width:420px;
+    margin-left: 20px;
+    background-color: rgba(0, 0, 0, 0.377);
+}
+#b1{
+    width:420px;
+    margin-left: 20px;
+    background-color: rgba(0, 0, 0, 0.377);
+}
+#c1{
+    margin-left: 20px;
+    background-color: rgba(0, 0, 0, 0.377);
+}
+</style>
+</head>
+<body>
+<h1>Our Menu</h1>
+
+<div class="row">
+  <div class="col-lg-4 col-md-6 col-sm-12" id="a1"><p id="a">Chicken</p><br><p>Chicken is the most common type of poultry in the world. Owing to the relative ease and low cost of raising them in comparison to animals such as cattle or hogs, chickens have become prevalent throughout the cuisine of cultures around the world,an it is important</p></div>
+  <div class="col-lg-4 col-md-6 col-sm-12" id="b1"><p id="b">Beef</p><br><p>Beef is the culinary name for meat from cattle, particularly skeletal muscle. Humans have been eating beef since prehistoric times. Beef is a source of protein and nutrients.Most beef skeletal muscle meat can be used as is by merely cutting into certain parts </p></div>
+  <div class="col-lg-4 col-md-12 col-sm-12" id="c1"><p id="c">Sushi</p><br><p>Vegetarian cuisine is based on food that meets vegetarian standards by not including meat and animal tissue products (such as gelatin or animal-derived rennet). For lacto-ovo vegetarianism (the most common type of vegetarianism in the Western world)</p></div>
+</div>
+</body>
+</html>
